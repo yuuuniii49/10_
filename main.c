@@ -3,19 +3,23 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-void swap (int x, int y) {
-	int temp;
+int main(void){
 	
-	temp = x;
-	x = y;
-	y = temp;
-}
+	int i;
+	int grade[5];
+	int sum=0;
+	int avg;
+	for (i=0;i<5;i++){
+		printf("grade[%i] = ", i);
+		scanf("%d", &grade[i]);
+		sum+=grade[i];		
+	}
+		avg=sum/5;
+	
+	for (i=0;i<5;i++)
+		printf("grade[%d] = %d\n",i,grade[i]);
 
-int main(void) {
-	int a = 3;
-	int b = 5;
-	swap(a, b);
-	printf("a:%i, b:%i\n", a, b);
+	printf("average : %d",avg);
 	
 	return 0;
 }
