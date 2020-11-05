@@ -9,15 +9,18 @@ int main(void){
 	int grade[5];
 	int sum=0;
 	int avg;
+	int *ptr;
+	ptr = grade;
+	
 	for (i=0;i<5;i++){
 		printf("grade[%i] = ", i);
-		scanf("%d", &grade[i]);
-		sum+=grade[i];		
+		scanf("%d", ptr+i);
+		sum+=*(ptr+i);
 	}
 		avg=sum/5;
 	
 	for (i=0;i<5;i++)
-		printf("grade[%d] = %d\n",i,grade[i]);
+		printf("grade[%d] = %d\n",i,*(ptr+i));
 
 	printf("average : %d",avg);
 	
